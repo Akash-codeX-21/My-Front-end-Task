@@ -1,0 +1,23 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ID Selector */
+#heading {
+    background-color: darkblue;
+    color: white;
+    width: 400px;
+    height: 60px;
+}
+
+/* Class Selector */
+.hospital {
+    background-color: lightblue;
+    color: black;
+    width: 500px;
+}

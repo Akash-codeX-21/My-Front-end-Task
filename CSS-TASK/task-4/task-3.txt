@@ -1,0 +1,124 @@
+CSS FLEX AND DISPLAY PROPERTIES
+
+1. DISPLAY PROPERTIES
+
+The display property defines how an element is displayed on a webpage.
+
+Common Display Values:
+
+1. display: block;
+   - Element takes the full available width.
+   - Starts from a new line.
+   - Example: div, p, h1
+
+2. display: inline;
+   - Element takes only required width.
+   - Elements appear in the same line.
+   - Example: span, a
+
+3. display: inline-block;
+   - Elements appear in the same line.
+   - Width and height can be applied.
+
+4. display: none;
+   - Hides the element completely.
+   - Removes the element space from the layout.
+
+5. display: flex;
+   - Creates a flexible layout.
+   - Used to arrange elements in rows or columns.
+
+6. display: grid;
+   - Creates a grid-based layout using rows and columns.
+
+
+2. FLEX PROPERTIES
+
+Flexbox is used to create responsive layouts and align items easily.
+
+
+A) FLEX CONTAINER PROPERTIES
+
+1. flex-direction
+   - Defines the direction of flex items.
+
+   Values:
+   - row
+   - row-reverse
+   - column
+   - column-reverse
+
+
+2. flex-wrap
+   - Controls whether flex items should wrap.
+
+   Values:
+   - nowrap
+   - wrap
+   - wrap-reverse
+
+
+3. flex-flow
+   - Shorthand property for flex-direction and flex-wrap.
+
+
+4. justify-content
+   - Aligns items horizontally along the main axis.
+
+   Values:
+   - flex-start
+   - flex-end
+   - center
+   - space-between
+   - space-around
+   - space-evenly
+
+
+5. align-items
+   - Aligns items vertically along the cross axis.
+
+   Values:
+   - flex-start
+   - flex-end
+   - center
+   - stretch
+
+
+6. align-content
+   - Controls spacing between multiple flex rows.
+
+
+7. gap
+   - Adds space between flex items.
+
+
+B) FLEX ITEM PROPERTIES
+
+1. flex-grow
+   - Defines how much an item can grow.
+
+2. flex-shrink
+   - Defines how much an item can shrink.
+
+3. flex-basis
+   - Sets the initial size of a flex item.
+
+4. flex
+   - Shorthand for flex-grow, flex-shrink, and flex-basis.
+
+5. order
+   - Changes the order of flex items.
+
+6. align-self
+   - Overrides the alignment of an individual flex item.
+
+
+Example:
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}

@@ -1,0 +1,20 @@
+/* Universal Selector */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Element Selector */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Class Selector */
+.card {
+    background-color: #4CAF50;
+    color: white;
+    width: 350px;
+    height: 180px;
+    text-align: center;
+}

@@ -1,0 +1,38 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.id-card {
+    width: 300px;
+    height: 400px;
+    padding: 20px;
+    margin: 20px auto;
+    border: 3px solid #333;
+    border-radius: 15px;
+    background-color: rgb(228, 80, 80);
+    text-align: center;
+}
+
+.id-card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+}
+
+.id-card h2 {
+    margin: 10px 0;
+}
+
+.id-card p {
+    margin: 10px 0;
+    font-size: 16px;
+}

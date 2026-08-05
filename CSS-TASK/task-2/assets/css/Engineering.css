@@ -1,0 +1,23 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* Common Class Selector */
+.department {
+    background-color: lightblue;
+    color: darkblue;
+    width: 250px;
+    height: 60px;
+}
+
+/* Unique ID Selector */
+#heading {
+    background-color: navy;
+    color: white;
+    width: 450px;
+    height: 60px;
+}

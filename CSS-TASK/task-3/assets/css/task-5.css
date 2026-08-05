@@ -1,0 +1,54 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+.box {
+    background-color: lightblue;
+}
+
+/* Box 1: Only width, height, background-color */
+.box1 {
+    width: 200px;
+    height: 100px;
+    background-color: rgb(37, 201, 37);
+}
+
+
+/* Box 2: Width, height, padding, background-color */
+.box2 {
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    background-color: rgb(189, 189, 22);
+}
+
+
+/* Box 3: Width, height, padding, border, background-color */
+.box3 {
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    border: 5px solid blue;
+    background-color: rgb(202, 52, 74);
+}
+
+
+/* Box 4: Width, height, padding, border, margin, background-color */
+.box4 {
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    border: 5px solid red;
+    margin: 40px;
+    background-color: lightskyblue;
+}

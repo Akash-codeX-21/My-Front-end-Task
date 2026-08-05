@@ -1,0 +1,21 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+    
+}
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.card {
+    width: 300px;
+    padding: 20px;
+    margin: 50px auto;
+    background-color: rgb(116, 66, 66);
+    border: 1px solid #000000;
+    border-radius: 10px;
+    display: none;
+}
