@@ -24,16 +24,15 @@ li {
     font-size: 18px;
 }
 
-/* First child */
+
 li:first-child {
     background-color: lightgreen;
     color: darkgreen;
     font-weight: bold;
 }
 
-/* Last child */
 li:last-child {
     background-color: lightcoral;
-    color: white;
+    color: blue;
     font-weight: bold;
 }
