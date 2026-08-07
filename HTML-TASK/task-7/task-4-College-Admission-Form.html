@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Admission Form</title>
+</head>
+<body>
+
+    <h2>Engineering College Admission Form</h2>
+
+    <form>
+
+        <label for="studentname">Student Name:</label><br>
+        <input type="text" id="studentname" name="studentname"><br><br>
+
+        <label for="fathername">Father Name:</label><br>
+        <input type="text" id="fathername" name="fathername"><br><br>
+
+        <label for="mothername">Mother Name:</label><br>
+        <input type="text" id="mothername" name="mothername"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="phone">Phone:</label><br>
+        <input type="tel" id="phone" name="phone"><br><br>
+
+        <label for="dob">Date of Birth:</label><br>
+        <input type="date" id="dob" name="dob"><br><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="Male">
+        <label for="male">Male</label>
+
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label>
+
+        <input type="radio" id="other" name="gender" value="Other">
+        <label for="other">Other</label><br><br>
+
+        <label for="department">Department:</label><br>
+        <select id="department" name="department">
+            <option>--Select Department--</option>
+            <option>Computer Science</option>
+            <option>Information Technology</option>
+            <option>Electronics</option>
+            <option>Mechanical</option>
+            <option>Civil</option>
+        </select><br><br>
+
+        <label for="percentage">Percentage:</label><br>
+        <input type="number" id="percentage" name="percentage"><br><br>
+
+        <label for="address">Address:</label><br>
+        <textarea id="address" name="address" rows="4" cols="30"></textarea><br><br>
+
+        <label for="photo">Passport Size Photo:</label><br>
+        <input type="file" id="photo" name="photo"><br><br>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+
+    </form>
+
+    <br><br>
+
+    <h2>Admission Report</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Application ID</th>
+                <th>Student Name</th>
+                <th>Department</th>
+                <th>Percentage</th>
+                <th>Email</th>
+                <th>Admission Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>APP101</td>
+                <td>akash</td>
+                <td>Computer Science</td>
+                <td>82%</td>
+                <td>akash@gmil.com</td>
+                <td>Approved</td>
+            </tr>
+
+            <tr>
+                <td>APP102</td>
+                <td>anu</td>
+                <td>Information Technology</td>
+                <td>89%</td>
+                <td>anu@gmil.com</td>
+                <td>Pending</td>
+            </tr>
+
+            <tr>
+                <td>APP103</td>
+                <td>Arun Kumar</td>
+                <td>Mechanical</td>
+                <td>85%</td>
+                <td>arun@gamil.com</td>
+                <td>Approved</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+</head>
+<body>
+
+    <h2>Student Registration Form</h2>
+
+    <form>
+
+        <label for="name">Student Name:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+
+        <label for="mobile">Mobile Number:</label><br>
+        <input type="tel" id="mobile" name="mobile"><br><br>
+
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age"><br><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="Male">
+        <label for="male">Male</label>
+
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label>
+
+        <input type="radio" id="other" name="gender" value="Other">
+        <label for="other">Other</label>
+        <br><br>
+
+        <label>Skills:</label><br>
+        <input type="checkbox" id="html" name="skills" value="HTML">
+        <label for="html">HTML</label>
+
+        <input type="checkbox" id="css" name="skills" value="CSS">
+        <label for="css">CSS</label>
+
+        <input type="checkbox" id="js" name="skills" value="JavaScript">
+        <label for="js">JavaScript</label>
+        <br><br>
+
+        <label for="course">Course Selection:</label><br>
+        <select id="course" name="course">
+            <option value="">--Select Course--</option>
+            <option value="Full Stack Development">Full Stack Development</option>
+            <option value="Python">Python</option>
+            <option value="Java">Java</option>
+            <option value="Data Science">Data Science</option>
+        </select>
+        <br><br>
+
+        <label for="address">Address:</label><br>
+        <textarea id="address" name="address" rows="4" cols="30"></textarea>
+        <br><br>
+
+        <label for="profile">Profile Image Upload:</label><br>
+        <input type="file" id="profile" name="profile">
+        <br><br>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+
+    </form>
+
+    <br><br>
+
+    <h2>Student Details</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>SLA ID</th>
+                <th>Student Name</th>
+                <th>Course</th>
+                <th>Email</th>
+                <th>Mobile Number</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>SLA001</td>
+                <td>Akash</td>
+                <td>Full Stack Development</td>
+                <td>akash@gamil.com</td>
+                <td>9876543210</td>
+                <td>Active</td>
+            </tr>
+
+            <tr>
+                <td>SLA002</td>
+                <td>Anjali Verma</td>
+                <td>Python</td>
+                <td>anjali@gamil.com</td>
+                <td>9876501234</td>
+                <td>Active</td>
+            </tr>
+
+            <tr>
+                <td>SLA003</td>
+                <td>Arun Kumar</td>
+                <td>Java</td>
+                <td>arun@gamil.com</td>
+                <td>9988776655</td>
+                <td>Pending</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

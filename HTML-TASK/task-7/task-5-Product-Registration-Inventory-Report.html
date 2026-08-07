@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Electronics Shop Inventory System</title>
+</head>
+<body>
+
+    <h2>Electronics Shop Inventory Form</h2>
+
+    <form>
+
+        <label for="productid">Product ID:</label><br>
+        <input type="text" id="productid" name="productid"><br><br>
+
+        <label for="productname">Product Name:</label><br>
+        <input type="text" id="productname" name="productname"><br><br>
+
+        <label for="brand">Brand:</label><br>
+        <input type="text" id="brand" name="brand"><br><br>
+
+        <label for="category">Category:</label><br>
+        <select id="category" name="category">
+            <option>--Select Category--</option>
+            <option>Mobile</option>
+            <option>Laptop</option>
+            <option>Television</option>
+            <option>Accessories</option>
+        </select><br><br>
+
+        <label for="price">Price:</label><br>
+        <input type="number" id="price" name="price"><br><br>
+
+        <label for="quantity">Quantity:</label><br>
+        <input type="number" id="quantity" name="quantity"><br><br>
+
+        <label for="supplier">Supplier:</label><br>
+        <input type="text" id="supplier" name="supplier"><br><br>
+
+        <label for="image">Product Image:</label><br>
+        <input type="file" id="image" name="image"><br><br>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+
+    </form>
+
+    <br><br>
+
+    <h2>Inventory Report</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Brand</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Stock Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>P1</td>
+                <td>Smartphone</td>
+                <td>Samsung</td>
+                <td>20000</td>
+                <td>17</td>
+                <td>In Stock</td>
+            </tr>
+
+            <tr>
+                <td>P2</td>
+                <td>Laptop</td>
+                <td>HP</td>
+                <td>11000</td>
+                <td>9</td>
+                <td>In Stock</td>
+            </tr>
+
+            <tr>
+                <td>P3</td>
+                <td>LED TV</td>
+                <td>Sony</td>
+                <td>18000</td>
+                <td>0</td>
+                <td>Out of Stock</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
