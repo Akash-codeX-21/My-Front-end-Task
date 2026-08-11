@@ -1,890 +1,258 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Web Development Tasks</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            min-height: 100vh;
-            font-family: Arial, Helvetica, sans-serif;
-            color: white;
-
-            background:
-                radial-gradient(
-                    circle at 10% 10%,
-                    rgba(138, 79, 255, 0.20),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 90% 30%,
-                    rgba(0, 200, 255, 0.13),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 50% 100%,
-                    rgba(255, 79, 139, 0.10),
-                    transparent 30%
-                ),
-                #070711;
-
-            padding: 30px;
-            overflow-x: hidden;
-        }
-
-        /* Background Glow */
-
-        body::before {
-            content: "";
-            position: fixed;
-            width: 400px;
-            height: 400px;
-            left: -150px;
-            top: 30%;
-            background: rgba(123, 77, 255, 0.12);
-            filter: blur(100px);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        body::after {
-            content: "";
-            position: fixed;
-            width: 350px;
-            height: 350px;
-            right: -120px;
-            bottom: 10%;
-            background: rgba(0, 217, 255, 0.10);
-            filter: blur(100px);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        /* Main Container */
-
-        .container {
-            width: 100%;
-            max-width: 1150px;
-            margin: auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Header */
-
-        .header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        /* Back Button Area */
-
-        .top-bar {
-            width: 100%;
-            display: flex;
-            justify-content: flex-start;
-            margin-bottom: 40px;
-        }
-
-        /* Back Button */
-
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-
-            padding: 12px 20px;
-
-            border-radius: 14px;
-
-            color: #ffffff;
-            text-decoration: none;
-
-            font-size: 14px;
-            font-weight: 600;
-
-            background: rgba(255, 255, 255, 0.06);
-
-            border: 1px solid rgba(255, 255, 255, 0.14);
-
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-
-            box-shadow:
-                0 10px 30px rgba(0, 0, 0, 0.25);
-
-            transition: all 0.3s ease;
-        }
-
-        .back-btn .arrow {
-            font-size: 18px;
-            transition: transform 0.3s ease;
-        }
-
-        .back-btn:hover {
-            transform: translateX(-5px);
-
-            background: rgba(255, 255, 255, 0.12);
-
-            border-color: rgba(157, 124, 255, 0.65);
-
-            box-shadow:
-                0 12px 35px rgba(120, 80, 255, 0.25);
-        }
-
-        .back-btn:hover .arrow {
-            transform: translateX(-4px);
-        }
-
-        /* Badge */
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            padding: 8px 17px;
-
-            border-radius: 50px;
-
-            background: rgba(255, 255, 255, 0.05);
-
-            border: 1px solid rgba(255, 255, 255, 0.12);
-
-            color: #b9a4ff;
-
-            font-size: 13px;
-            font-weight: 600;
-
-            letter-spacing: 0.5px;
-
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-
-            margin-bottom: 20px;
-        }
-
-        /* Main Title */
-
-        h1 {
-            font-size: clamp(42px, 7vw, 76px);
-
-            font-weight: 800;
-
-            letter-spacing: -4px;
-
-            line-height: 1.05;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    #ffffff,
-                    #b28cff,
-                    #58e9ff
-                );
-
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-
-            background-clip: text;
-
-            margin-bottom: 15px;
-        }
-
-        /* Description */
-
-        .header p {
-            color: #888899;
-
-            font-size: 15px;
-
-            line-height: 1.7;
-
-            max-width: 600px;
-
-            margin: auto;
-        }
-
-        /* Tasks Grid */
-
-        .tasks {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, minmax(0, 1fr));
-
-            gap: 22px;
-        }
-
-        /* Task Card */
-
-        .task {
-            position: relative;
-
-            padding: 25px;
-
-            border-radius: 22px;
-
-            border: 1px solid rgba(255, 255, 255, 0.10);
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(255, 255, 255, 0.08),
-                    rgba(255, 255, 255, 0.025)
-                );
-
-            backdrop-filter: blur(22px);
-            -webkit-backdrop-filter: blur(22px);
-
-            box-shadow:
-                0 15px 45px rgba(0, 0, 0, 0.20);
-
-            overflow: hidden;
-
-            transition:
-                transform 0.3s ease,
-                border-color 0.3s ease,
-                box-shadow 0.3s ease;
-        }
-
-        /* Card Glow */
-
-        .task::before {
-            content: "";
-
-            position: absolute;
-
-            width: 100px;
-            height: 100px;
-
-            top: -45px;
-            right: -45px;
-
-            border-radius: 50%;
-
-            background: rgba(145, 105, 255, 0.15);
-
-            filter: blur(25px);
-
-            pointer-events: none;
-        }
-
-        .task:hover {
-            transform: translateY(-7px);
-
-            border-color:
-                rgba(157, 124, 255, 0.45);
-
-            box-shadow:
-                0 25px 65px rgba(0, 0, 0, 0.40);
-        }
-
-        /* Task Title */
-
-        .task-title {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-
-            font-size: 20px;
-
-            font-weight: 700;
-
-            margin-bottom: 18px;
-        }
-
-        .task-title span {
-            display: inline-flex;
-
-            align-items: center;
-            justify-content: center;
-
-            min-width: 38px;
-            height: 28px;
-
-            padding: 0 8px;
-
-            border-radius: 9px;
-
-            background:
-                rgba(140, 105, 255, 0.12);
-
-            border:
-                1px solid rgba(157, 124, 255, 0.20);
-
-            color: #a78bff;
-
-            font-size: 12px;
-        }
-
-        /* Links Container */
-
-        .links {
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 9px;
-        }
-
-        /* Task Links */
-
-        .links a {
-            position: relative;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            text-decoration: none;
-
-            color: #b4b4c4;
-
-            padding: 12px 14px;
-
-            border-radius: 12px;
-
-            background:
-                rgba(255, 255, 255, 0.035);
-
-            border:
-                1px solid transparent;
-
-            font-size: 14px;
-
-            transition:
-                all 0.25s ease;
-        }
-
-        .links a::after {
-            content: "→";
-
-            color: #8f72ff;
-
-            font-size: 16px;
-
-            transition:
-                transform 0.25s ease;
-        }
-
-        .links a:hover {
-            color: #ffffff;
-
-            background:
-                rgba(255, 255, 255, 0.09);
-
-            border-color:
-                rgba(255, 255, 255, 0.12);
-
-            transform: translateX(4px);
-        }
-
-        .links a:hover::after {
-            transform: translateX(4px);
-        }
-
-        /* Footer */
-
-        .footer {
-            text-align: center;
-
-            color: #555566;
-
-            font-size: 13px;
-
-            margin-top: 55px;
-
-            padding-bottom: 15px;
-        }
-
-        /* Tablet */
-
-        @media (max-width: 900px) {
-
-            .tasks {
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
-            }
-
-        }
-
-        /* Mobile */
-
-        @media (max-width: 600px) {
-
-            body {
-                padding: 18px;
-            }
-
-            .top-bar {
-                margin-bottom: 30px;
-            }
-
-            .tasks {
-                grid-template-columns: 1fr;
-            }
-
-            h1 {
-                font-size: 48px;
-                letter-spacing: -2px;
-            }
-
-            .header {
-                margin-bottom: 35px;
-            }
-
-            .task {
-                padding: 22px;
-            }
-
-        }
-
-        /* Small Mobile */
-
-        @media (max-width: 380px) {
-
-            h1 {
-                font-size: 40px;
-            }
-
-            .back-btn {
-                padding: 11px 16px;
-            }
-
-            .task-title {
-                font-size: 18px;
-            }
-
-        }
-
-    </style>
-</head>
-
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Development Tasks</title>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+
+  <body>
     <div class="container">
-
-        <!-- HEADER -->
-
-        <header class="header">
-
-            <!-- BACK BUTTON -->
-
-            <div class="top-bar">
-
-                <a
-                    class="back-btn"
-                    href="../index.html"
-                >
-                    <span class="arrow">←</span>
-                    <span>Back to Home</span>
-                </a>
-
-            </div>
-
-            <!-- BADGE -->
-
-            <div class="badge">
-                ✦ Welcome to Akash CodeX 21
-            </div>
-
-            <!-- TITLE -->
-
-            <h1>
-                CSS Tasks
-            </h1>
-
-            <!-- DESCRIPTION -->
-
-            <p>
-                Complete My CSS tasks web development skills.
-            </p>
-
-        </header>
-
-
-        <!-- TASKS -->
-
-        <div class="tasks">
-
-
-            <!-- TASK 1 -->
-
-            <div class="task">
-
-                <h2 class="task-title">
-                    <span>01</span>
-                    Day 1
-                </h2>
-
-                <div class="links">
-
-                    <a href="../CSS-TASK/task-1/task-1.html">
-                        task 1
-                    </a>
-
-                    <a href="../CSS-TASK/task-1/task-2.html">
-                        task 2
-                    </a>
-
-                    <a href="../CSS-TASK/task-1/task-3.html">
-                        task 3
-                    </a>
-
-                    <a href="../CSS-TASK/task-1/task-4.html">
-                        task 4
-                    </a>
-
-                    <a href="../CSS-TASK/task-1/task-5.html">
-                        task 5
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- TASK 2 -->
-
-            <div class="task">
-
-                <h2 class="task-title">
-                    <span>02</span>
-                    Day 2
-                </h2>
-
-                <div class="links">
-
-                    <a href="../CSS-TASK/task-2/Chennai IT Companies.html">
-                        task 1
-                    </a>
-
-                    <a href="../CSS-TASK/task-2/Engineering College Departments.html">
-                        task 2
-                    </a>
-
-                    <a href="../CSS-TASK/task-2/Favorite Movies.html">
-                        task 3
-                    </a>
-
-                    <a href="../CSS-TASK/task-2/Hospital Information.html">
-                        task 4
-                    </a>
-
-                    <a href="../CSS-TASK/task-2/IT Company Details.html">
-                        task 5
-                    </a>
-
-                    <a href="../CSS-TASK/task-2/Student Profile Card.html">
-                         task 6
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- TASK 3 -->
-
-            <div class="task">
-
-                <h2 class="task-title">
-                    <span>03</span>
-                    Day 3
-                </h2>
-
-                <div class="links">
-
-                    <a href="../CSS-TASK/task-3/Student Profile Card.html">
-                        task 1
-                    </a>
-
-                    <a href="../CSS-TASK/task-3/Employee ID Card.html">
-                        task 2
-                    </a>
-
-                    <a href="../CSS-TASK/task-3/Mini Box Model.html">
-                        task 3
-                    </a>
-
-                    <a href="../CSS-TASK/task-3/News Article Box.html">
-                        task 4
-                    </a>
-
-                    <a href="../CSS-TASK/task-3/Product Card.html">
-                        task 5
-                    </a>
-
-                    <a href="../CSS-TASK/task-3/Challenge Task.html">
-                         Challenge-Task
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- TASK 4 -->
-
-            <div class="task">
-
-                <h2 class="task-title">
-                    <span>04</span>
-                    Day 4
-                </h2>
-
-                <div class="links">
-
-                    <a href="../CSS-TASK/task-4/task-1.html">
-                        task 1
-                    </a>
-
-                    <a href="../CSS-TASK/task-4/task-2.html">
-                        task 2
-                    </a>
-
-                    <a href="../CSS-TASK/task-4/task-3.txt">
-                        task 3
-                    </a>
-
-                    <a href="../CSS-TASK/task-4/task-4.html">
-                        task 4
-                    </a>
-
-                    <a href="../CSS-TASK/task-4/task-5.html">
-                        task 5
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- TASK 5 -->
-
-            <div class="task">
-
-                <h2 class="task-title">
-                    <span>05</span>
-                    Day 5
-                </h2>
-
-                <div class="links">
-
-                    <a href="../CSS-TASK/task-5/index.html">
-                        task 1
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- TASK 6 -->
-
-            <div class="task">
-
-                <h2 class="task-title">
-                    <span>06</span>
-                    Day 6
-                </h2>
-
-                <div class="links">
-
-                    <a href="../CSS-TASK/task-6/absolute.html">
-                        task 1
-                    </a>
-
-                    <a href="../CSS-TASK/task-6/complete position.html">
-                        task 2
-                    </a>
-
-                    <a href="../CSS-TASK/task-6/relative.html">
-                        task 3
-                    </a>
-
-                    <a href="../CSS-TASK/task-6/sticky.html">
-                        task 4
-                    </a>
-
-                    <a href="../CSS-TASK/task-6/whatsapp.html">
-                        task 5
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- TASK 7 -->
-
-            <div class="task">
-
-                <h2 class="task-title">
-                    <span>07</span>
-                    Day 7
-                </h2>
-
-                <div class="links">
-
-                    <a href="../CSS-TASK/task-7/task-1.html">
-                        task 1
-                    </a>
-
-                    <a href="../CSS-TASK/task-7/task-2.html">
-                        task 2
-                    </a>
-
-                    <a href="../CSS-TASK/task-7/task-3.html">
-                        task 3
-                    </a>
-
-                    <a href="../CSS-TASK/task-7/task-4.html">
-                        task 4
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- TASK 8 -->
-
-            <div class="task">
-
-                <h2 class="task-title">
-                    <span>08</span>
-                    Day 8
-                </h2>
-
-                <div class="links">
-
-                    <a href="../CSS-TASK/task-8/task-1.html">
-                        task 1
-                    </a>
-
-                    <a href="../CSS-TASK/task-8/task-2.html">
-                        task 2
-                    </a>
-
-                    <a href="../CSS-TASK/task-8/task-3.html">
-                        task 3
-                    </a>
-
-                    <a href="../CSS-TASK/task-8/task-4.html">
-                        task 4
-                    </a>
-
-                    <a href="../CSS-TASK/task-8/task-5.html">
-                        task 5
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- TASK 9 -->
-
-            <div class="task">
-
-                <h2 class="task-title">
-                    <span>09</span>
-                    Day 9
-                </h2>
-
-                <div class="links">
-
-                    <a href="../CSS-TASK/task-9/task-1.html">
-                        task 1
-                    </a>
-
-                    <a href="../CSS-TASK/task-9/task-2.html">
-                        task 2
-                    </a>
-
-                    <a href="../CSS-TASK/task-9/task-3.html">
-                        task 3
-                    </a>
-
-                    <a href="../CSS-TASK/task-9/task-4.html">
-                        task 4
-                    </a>
-
-                    <a href="../CSS-TASK/task-9/task-5.html">
-                        task 5
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- TASK 10 -->
-
-            <div class="task">
-
-                <h2 class="task-title">
-                    <span>10</span>
-                    Day 10
-                </h2>
-
-                <div class="links">
-
-                    <a href="../CSS-TASK/task-10/task-1.html">
-                        task 1
-                    </a>
-
-                    <a href="../CSS-TASK/task-10/task-2.html">
-                        task 2
-                    </a>
-
-                    <a href="../CSS-TASK/task-10/task-3.html">
-                        task 3
-                    </a>
-
-                    <a href="../CSS-TASK/task-10/task-4.html">
-                        task 4
-                    </a>
-
-                    <a href="../CSS-TASK/task-10/task-5.html">
-                        task 5
-                    </a>
-
-                    <a href="../CSS-TASK/task-10/Challenge-Task.html">
-                        Challenge-Task
-                    </a>
-
-                </div>
-
-            </div>
-
+      <!-- HEADER -->
+
+      <header class="header">
+        <!-- BACK BUTTON -->
+
+        <div class="top-bar">
+          <a class="back-btn" href="../index.html">
+            <span class="arrow">←</span>
+            <span>Back to Home</span>
+          </a>
         </div>
 
+        <!-- BADGE -->
 
-        <!-- FOOTER -->
+        <div class="badge">✦ Welcome to Akash CodeX 21</div>
 
-        <div class="footer">
-            © 2026 • Akash CodeX 21
+        <!-- TITLE -->
+
+        <h1>CSS Tasks</h1>
+
+        <!-- DESCRIPTION -->
+
+        <p>Complete My CSS tasks web development skills.</p>
+      </header>
+
+      <!-- TASKS -->
+
+      <div class="tasks">
+        <!-- TASK 1 -->
+
+        <div class="task">
+          <h2 class="task-title">
+            <span>01</span>
+            Day 1
+          </h2>
+
+          <div class="links">
+            <a href="../CSS-TASK/task-1/task-1.html"> task 1 </a>
+
+            <a href="../CSS-TASK/task-1/task-2.html"> task 2 </a>
+
+            <a href="../CSS-TASK/task-1/task-3.html"> task 3 </a>
+
+            <a href="../CSS-TASK/task-1/task-4.html"> task 4 </a>
+
+            <a href="../CSS-TASK/task-1/task-5.html"> task 5 </a>
+          </div>
         </div>
 
+        <!-- TASK 2 -->
+
+        <div class="task">
+          <h2 class="task-title">
+            <span>02</span>
+            Day 2
+          </h2>
+
+          <div class="links">
+            <a href="../CSS-TASK/task-2/Chennai IT Companies.html"> task 1 </a>
+
+            <a href="../CSS-TASK/task-2/Engineering College Departments.html">
+              task 2
+            </a>
+
+            <a href="../CSS-TASK/task-2/Favorite Movies.html"> task 3 </a>
+
+            <a href="../CSS-TASK/task-2/Hospital Information.html"> task 4 </a>
+
+            <a href="../CSS-TASK/task-2/IT Company Details.html"> task 5 </a>
+
+            <a href="../CSS-TASK/task-2/Student Profile Card.html"> task 6 </a>
+          </div>
+        </div>
+
+        <!-- TASK 3 -->
+
+        <div class="task">
+          <h2 class="task-title">
+            <span>03</span>
+            Day 3
+          </h2>
+
+          <div class="links">
+            <a href="../CSS-TASK/task-3/Student Profile Card.html"> task 1 </a>
+
+            <a href="../CSS-TASK/task-3/Employee ID Card.html"> task 2 </a>
+
+            <a href="../CSS-TASK/task-3/Mini Box Model.html"> task 3 </a>
+
+            <a href="../CSS-TASK/task-3/News Article Box.html"> task 4 </a>
+
+            <a href="../CSS-TASK/task-3/Product Card.html"> task 5 </a>
+
+            <a href="../CSS-TASK/task-3/Challenge Task.html">
+              Challenge-Task
+            </a>
+          </div>
+        </div>
+
+        <!-- TASK 4 -->
+
+        <div class="task">
+          <h2 class="task-title">
+            <span>04</span>
+            Day 4
+          </h2>
+
+          <div class="links">
+            <a href="../CSS-TASK/task-4/task-1.html"> task 1 </a>
+
+            <a href="../CSS-TASK/task-4/task-2.html"> task 2 </a>
+
+            <a href="../CSS-TASK/task-4/task-3.txt"> task 3 </a>
+
+            <a href="../CSS-TASK/task-4/task-4.html"> task 4 </a>
+
+            <a href="../CSS-TASK/task-4/task-5.html"> task 5 </a>
+          </div>
+        </div>
+
+        <!-- TASK 5 -->
+
+        <div class="task">
+          <h2 class="task-title">
+            <span>05</span>
+            Day 5
+          </h2>
+
+          <div class="links">
+            <a href="../CSS-TASK/task-5/index.html"> task 1 </a>
+          </div>
+        </div>
+
+        <!-- TASK 6 -->
+
+        <div class="task">
+          <h2 class="task-title">
+            <span>06</span>
+            Day 6
+          </h2>
+
+          <div class="links">
+            <a href="../CSS-TASK/task-6/absolute.html"> task 1 </a>
+
+            <a href="../CSS-TASK/task-6/complete position.html"> task 2 </a>
+
+            <a href="../CSS-TASK/task-6/relative.html"> task 3 </a>
+
+            <a href="../CSS-TASK/task-6/sticky.html"> task 4 </a>
+
+            <a href="../CSS-TASK/task-6/whatsapp.html"> task 5 </a>
+          </div>
+        </div>
+
+        <!-- TASK 7 -->
+
+        <div class="task">
+          <h2 class="task-title">
+            <span>07</span>
+            Day 7
+          </h2>
+
+          <div class="links">
+            <a href="../CSS-TASK/task-7/task-1.html"> task 1 </a>
+
+            <a href="../CSS-TASK/task-7/task-2.html"> task 2 </a>
+
+            <a href="../CSS-TASK/task-7/task-3.html"> task 3 </a>
+
+            <a href="../CSS-TASK/task-7/task-4.html"> task 4 </a>
+          </div>
+        </div>
+
+        <!-- TASK 8 -->
+
+        <div class="task">
+          <h2 class="task-title">
+            <span>08</span>
+            Day 8
+          </h2>
+
+          <div class="links">
+            <a href="../CSS-TASK/task-8/task-1.html"> task 1 </a>
+
+            <a href="../CSS-TASK/task-8/task-2.html"> task 2 </a>
+
+            <a href="../CSS-TASK/task-8/task-3.html"> task 3 </a>
+
+            <a href="../CSS-TASK/task-8/task-4.html"> task 4 </a>
+
+            <a href="../CSS-TASK/task-8/task-5.html"> task 5 </a>
+          </div>
+        </div>
+
+        <!-- TASK 9 -->
+
+        <div class="task">
+          <h2 class="task-title">
+            <span>09</span>
+            Day 9
+          </h2>
+
+          <div class="links">
+            <a href="../CSS-TASK/task-9/task-1.html"> task 1 </a>
+
+            <a href="../CSS-TASK/task-9/task-2.html"> task 2 </a>
+
+            <a href="../CSS-TASK/task-9/task-3.html"> task 3 </a>
+
+            <a href="../CSS-TASK/task-9/task-4.html"> task 4 </a>
+
+            <a href="../CSS-TASK/task-9/task-5.html"> task 5 </a>
+          </div>
+        </div>
+
+        <!-- TASK 10 -->
+
+        <div class="task">
+          <h2 class="task-title">
+            <span>10</span>
+            Day 10
+          </h2>
+
+          <div class="links">
+            <a href="../CSS-TASK/task-10/task-1.html"> task 1 </a>
+
+            <a href="../CSS-TASK/task-10/task-2.html"> task 2 </a>
+
+            <a href="../CSS-TASK/task-10/task-3.html"> task 3 </a>
+
+            <a href="../CSS-TASK/task-10/task-4.html"> task 4 </a>
+
+            <a href="../CSS-TASK/task-10/task-5.html"> task 5 </a>
+
+            <a href="../CSS-TASK/task-10/Challenge-Task.html">
+              Challenge-Task
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+
+      <div class="footer">© 2026 • Akash CodeX 21</div>
     </div>
-
-</body>
+  </body>
 </html>
