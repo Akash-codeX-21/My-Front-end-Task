@@ -1,0 +1,75 @@
+1. What is JavaScript?
+JavaScript is a programming language used to make web pages interactive and dynamic.
+For example, it can handle button clicks, validate forms, change webpage content, create animations, and communicate with servers.
+
+2. What is a variable?
+A variable is a named container used to store data in a program.
+
+let age = 25;
+
+Here, age is a variable that stores the value 25.
+
+
+3. What is variable declaration?
+Variable declaration means creating a variable by specifying its name.
+
+let age;
+
+Here, age is declared but no value has been given to it yet.
+
+4. What is initialization?
+Initialization means giving a variable its first value when it is created.
+
+let age = 25;
+
+Here, age is initialized with the value 25.
+
+5. What is an assignment operator?
+The assignment operator (=) is used to assign a value to a variable.
+
+let name = "John";
+
+Here, = assigns "John" to the variable name.
+
+6. What are var, let and const?
+They are JavaScript keywords used to declare variables.
+
+var age = 20;
+let name = "John";
+const pi = 3.14;
+
+
+7. What is the difference between var, let and const?
+Feature	var	let	const
+Can be reassigned?	Yes	Yes	No
+Can be redeclared in same scope?	Yes	No	No
+Scope	Function	Block	Block
+Must be initialized immediately?	No	No	Yes
+
+
+8. What is ES6?
+ES6 stands for ECMAScript 2015. It is a major version of the JavaScript language released in 2015.
+
+ES6 introduced many important features, including:
+
+let and const
+Arrow functions
+Classes
+Template literals
+Destructuring
+Promises
+Modules
+
+
+9. What is a JavaScript Engine?
+A JavaScript engine is a program that reads and executes JavaScript code.
+For example, when you run JavaScript in a browser, the browser's JavaScript engine converts the code into instructions that the computer can execute.
+
+Examples:
+
+V8 → Chrome, Node.js
+SpiderMonkey → Firefox
+JavaScriptCore → Safari
+
+10. What is V8?
+V8 is Google's open-source JavaScript engine.
