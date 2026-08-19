@@ -4,197 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Projects</title>
-
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        min-height: 100vh;
-        font-family: Arial, Helvetica, sans-serif;
-        color: #fff;
-          background:
-            radial-gradient(circle at 20% 20%, #6c2cff55, transparent 30%),
-            radial-gradient(circle at 80% 80%, #00d9ff44, transparent 30%),
-            #080812;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 25px;
-        overflow-x: hidden;
-      }
-
-      .container {
-        width: 100%;
-        max-width: 850px;
-        text-align: center;
-      }
-
-      .badge {
-        display: inline-block;
-        padding: 8px 16px;
-        border: 1px solid #ffffff20;
-        border-radius: 50px;
-        background: #ffffff0d;
-        backdrop-filter: blur(15px);
-        color: #bbaaff;
-        font-size: 13px;
-        margin-bottom: 20px;
-      }
-
-      h1 {
-        font-size: clamp(42px, 8vw, 80px);
-        font-weight: 800;
-        letter-spacing: -4px;
-        background: linear-gradient(90deg, #fff, #a98cff, #55e8ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 15px;
-      }
-
-      .description {
-        color: #a8a8bb;
-        font-size: 17px;
-        max-width: 550px;
-        margin: auto;
-        line-height: 1.7;
-      }
-
-      .cards {
-        margin-top: 45px;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 22px;
-      }
-
-      .card {
-        position: relative;
-        padding: 35px 25px;
-        border: 1px solid #ffffff15;
-        border-radius: 25px;
-        background: linear-gradient(145deg, #ffffff12, #ffffff04);
-        backdrop-filter: blur(20px);
-        box-shadow: 0 20px 60px #00000055;
-        transition: 0.35s ease;
-        overflow: hidden;
-      }
-
-      .card::before {
-        content: "";
-        position: absolute;
-        width: 120px;
-        height: 120px;
-        background: #8d5cff44;
-        filter: blur(50px);
-        border-radius: 50%;
-        top: -40px;
-        right: -40px;
-      }
-
-      .card:hover {
-        transform: translateY(-10px);
-        border-color: #a17aff66;
-        box-shadow: 0 30px 80px #00000088;
-      }
-
-      .icon {
-        width: 70px;
-        height: 70px;
-        margin: auto;
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 28px;
-        font-weight: bold;
-        background: #ffffff0d;
-        border: 1px solid #ffffff15;
-      }
-
-      .html-icon {
-        color: #ff7043;
-      }
-
-      .css-icon {
-        color: #42a5f5;
-      }
-
-      h2 {
-        margin: 20px 0 8px;
-        font-size: 25px;
-      }
-
-      .card p {
-        color: #9999aa;
-        margin-bottom: 25px;
-      }
-
-      .btn {
-        display: inline-block;
-        text-decoration: none;
-        color: white;
-        padding: 13px 28px;
-        border-radius: 14px;
-        font-weight: bold;
-        transition: 0.3s;
-        border: 1px solid #ffffff20;
-        background: #ffffff0d;
-      }
-
-      .btn:hover {
-        transform: scale(1.05);
-        background: rgba(255, 255, 255, 0.12);
-        border-color: rgba(157, 124, 255, 0.65);
-        box-shadow: 0 12px 35px rgba(120, 80, 255, 0.25);
-      }
-
-      .footer {
-        margin-top: 35px;
-        color: #666677;
-        font-size: 13px;
-      }
-
-      @media (max-width: 650px) {
-        .cards {
-          grid-template-columns: 1fr;
-        }
-
-        h1 {
-          letter-spacing: -2px;
-        }
-      }
-
-      .boot {
-        width: 160px;
-        height: 70px;
-        margin: auto;
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 28px;
-        font-weight: bold;
-        background: #ffffff0d;
-        border: 1px solid #ffffff15;
-      }
-
-      .tialwind {
-        width: 220px;
-        height: 70px;
-        margin: auto;
-        border-radius: 200px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 28px;
-        font-weight: bold;
-        background: #ffffff0d;
-        border: 1px solid #ffffff15;
-      }
-    </style>
+    <link rel="stylesheet" href="mainsrc/assets/css/index.css">
   </head>
 
   <body>
@@ -211,7 +21,7 @@
       <div class="cards">
         <!-- HTML -->
         <div class="card">
-          <div class="icon html-icon">&lt;/&gt;</div>
+          <div class="html1 html-icon">HTML</div>
 
           <h2>HTML</h2>
 
@@ -222,7 +32,7 @@
 
         <!-- CSS -->
         <div class="card">
-          <div class="icon css-icon">#</div>
+          <div class="icon css-icon">CSS</div>
 
           <h2>CSS</h2>
 
@@ -264,6 +74,18 @@
           <p>Explore modern Project designs.</p>
 
           <a class="btn" href="mainsrc/Project.html"> Project → </a>
+        </div>
+
+
+        <!-- JAVA SCRIPT-->
+        <div class="card">
+          <div class="js css-icon">Java Script</div>
+
+          <h2>Java Script</h2>
+
+          <p>Explore modern Java Script designs.</p>
+
+          <a class="btn" href="mainsrc/js_task.html"> Java Script → </a>
         </div>
 
         <!-- close -->
